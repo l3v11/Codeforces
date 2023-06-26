@@ -4,18 +4,25 @@
 int main() {
 
     int t;
+    long a, b;
 
     scanf("%d", &t);
 
     while (t--) {
-        
-    }
+        int div=0, incr=0;
 
-    for (int i=0; i<t; i++) {
-        
-    }
+        scanf("%ld %ld", &a, &b);
 
-    printf("\n");
+        if (a % b == 0) {
+            printf("0\n");
+            continue;
+        }
+
+        div = a / b;
+        incr = (div + 1) * b;
+
+        printf("%ld\n", incr - a);
+    }
 
     return 0;
 }
