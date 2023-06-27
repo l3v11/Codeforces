@@ -5,7 +5,7 @@
 int main() {
 
     int t;
-    int alph[27] = {0};
+    int alph[26] = {0};
     char str[101];
 
     scanf("%d", &t);
