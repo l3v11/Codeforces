@@ -16,7 +16,7 @@ int main() {
         st2[i] = tolower(st2[i]);
     }
 
-    if ( strcmp(st1, st2) == 0) {
+    if (strcmp(st1, st2) == 0) {
         printf("0\n");
     }
 
