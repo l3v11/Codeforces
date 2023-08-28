@@ -9,7 +9,7 @@ int main() {
     while (tc--) {
         int n;
         scanf("%d", &n);
-        int ans[100];
+        int ans[5];
         int pwr=1, cnt=0;
 
         while (n > 0) {
@@ -24,6 +24,8 @@ int main() {
         for (int i=0; i<cnt; i++) {
             printf("%d ", ans[i]);
         }
+
+        printf("\n");
     }
 
     return 0;

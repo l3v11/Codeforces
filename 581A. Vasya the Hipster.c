@@ -3,15 +3,17 @@
 
 int main() {
 
-    int tc;
-    scanf("%d", &tc);
+    int a, b;
+    scanf("%d %d", &a, &b);
 
-    while (tc--) {
-        
-    }
-
-    for (int i=0; i<tc; i++) {
-        
+    if (a >= b) {
+        a -= b;
+        a /= 2;
+        printf("%d %d\n", b, a);
+    } else {
+        b -= a;
+        b /= 2;
+        printf("%d %d\n", a, b);
     }
 
     return 0;
