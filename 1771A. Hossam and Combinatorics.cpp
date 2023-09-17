@@ -40,7 +40,7 @@ int main () {
         ll n;
         cin >> n;
 
-        vi a(n);
+        vl a(n);
         for (ll i = 0; i < n; i++) cin >> a[i];
 
         ll mx = *max_element(all(a));
