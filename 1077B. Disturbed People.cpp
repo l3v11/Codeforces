@@ -31,28 +31,28 @@ using vc = vector<char>;
 const int mod = 998244353; // 1e9+7;
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
-    str x, s;
-    cin >> x >> s;
+	int n;
+	cin >> n;
 
-    for (int i = 0; i < 6; i++) {
-        if (x.find(s) != string::npos) {
-            cout << i << endl;
-            return;
-        }
-        x += x;
-    }
-
-    cout << -1 << endl;
+	vi arr(n);
+	for (int i = 0; i < n; i++) cin >> arr[i];
+	
+	int cnt = 0;
+	for (int i = 1; i < n - 1; ++i) {
+		if (arr[i] == 0 && arr[i + 1] == 1 && arr[i - 1] == 1) {
+			cnt++;
+			arr[i + 1] = 0;
+		}
+	}
+	cout << cnt << '\n';
 }
 
-int main() {
+int main () {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int tc;
-    cin >> tc;
+    int tc = 1;
+    // cin >> tc;
 
     while (tc--) solve();
 

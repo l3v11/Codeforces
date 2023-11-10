@@ -31,27 +31,20 @@ using vc = vector<char>;
 const int mod = 998244353; // 1e9+7;
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
-    str x, s;
-    cin >> x >> s;
+    str s;
+	cin >> s;
 
-    for (int i = 0; i < 6; i++) {
-        if (x.find(s) != string::npos) {
-            cout << i << endl;
-            return;
-        }
-        x += x;
-    }
+	sort(all(s));
 
-    cout << -1 << endl;
+	if (s[0] == s.back()) cout << -1 << '\n';
+	else cout << s << '\n';
 }
 
-int main() {
+int main () {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int tc;
+    int tc = 1;
     cin >> tc;
 
     while (tc--) solve();
