@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <cmath>
 #include <cstring>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <set>
@@ -9,6 +10,7 @@
 using namespace std;
 
 using ll = long long;
+using ld = long double;
 using str = string;
 
 using pii = pair<int, int>;
@@ -19,6 +21,7 @@ using pll = pair<ll, ll>;
 
 using vi = vector<int>;
 using vl = vector<ll>;
+using vd = vector<ld>;
 using vs = vector<str>;
 using vc = vector<char>;
 
@@ -31,10 +34,26 @@ using vc = vector<char>;
 const int mod = 998244353; // 1e9+7;
 
 void solve() {
-    
+    int n, h, m;
+	cin >> n >> h >> m;
+
+	int time_s = 60 * h + m;
+	int ans = 24 * 60;
+
+	for (int i = 0; i < n; i++) {
+		cin >> h >> m;
+
+		int time_w = 60 * h + m - time_s;
+
+		if (time_w < 0) time_w += 24 * 60;
+
+		ans = min(ans, time_w);
+	}
+
+	cout << ans / 60 << ' ' << ans % 60 << '\n';
 }
 
-int main () {
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
