@@ -1,3 +1,5 @@
 *.exe
 *.o
 *.out
+test.c
+test.cpp
