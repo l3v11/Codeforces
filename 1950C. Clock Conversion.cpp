@@ -14,6 +14,7 @@ using vl = vector<ll>;
 using vd = vector<ld>;
 using vs = vector<str>;
 using vc = vector<char>;
+using vb = vector<bool>;
 
 #define sz(x) int((x).size())
 #define all(x) x.begin(), x.end()
@@ -27,22 +28,24 @@ const int mod = 1e9 + 7; // 998244353;
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
-void solve() {
-    int n, m, k;
-    cin >> n >> m >> k;
+void solve()
+{
+    int hour, minute;
+    char colon;
+    cin >> hour >> colon >> minute;
 
-    vi b(n), c(m);
-    for (auto &num : b) cin >> num;
-    for (auto &num : c) cin >> num;
-    
-    int cnt = 0;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
-            cnt += b[i] + c[j] <= k;
-    cout << cnt << nl;
+    str period = (hour < 12) ? "AM" : "PM";
+
+    if (hour == 0)
+        hour = 12;
+    else if (hour > 12)
+        hour -= 12;
+
+    cout << setw(2) << setfill('0') << hour << ":" << setw(2) << setfill('0') << minute << " " << period << endl;
 }
 
-int main() {
+int main()
+{
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 

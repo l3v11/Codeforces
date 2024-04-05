@@ -14,6 +14,7 @@ using vl = vector<ll>;
 using vd = vector<ld>;
 using vs = vector<str>;
 using vc = vector<char>;
+using vb = vector<bool>;
 
 #define sz(x) int((x).size())
 #define all(x) x.begin(), x.end()
@@ -27,27 +28,37 @@ const int mod = 1e9 + 7; // 998244353;
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
-void solve() {
-    int n, m, k;
-    cin >> n >> m >> k;
+void solve()
+{
+    vi a(4);
+    for (auto &num : a) cin >> num;
 
-    vi b(n), c(m);
-    for (auto &num : b) cin >> num;
-    for (auto &num : c) cin >> num;
-    
-    int cnt = 0;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
-            cnt += b[i] + c[j] <= k;
-    cout << cnt << nl;
+    str s;
+    cin >> s;
+
+    int ans = 0;
+    for (char c : s)
+    {
+        if (c == '1')
+            ans += a[0];
+        else if (c == '2')
+            ans += a[1];
+        else if (c == '3')
+            ans += a[2];
+        else if (c == '4')
+            ans += a[3];
+    }
+
+    cout << ans << nl;
 }
 
-int main() {
+int main()
+{
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
 
     while (tc--)
         solve();

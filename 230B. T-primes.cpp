@@ -14,6 +14,7 @@ using vl = vector<ll>;
 using vd = vector<ld>;
 using vs = vector<str>;
 using vc = vector<char>;
+using vb = vector<bool>;
 
 #define sz(x) int((x).size())
 #define all(x) x.begin(), x.end()
@@ -27,22 +28,28 @@ const int mod = 1e9 + 7; // 998244353;
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
-void solve() {
-    int n, m, k;
-    cin >> n >> m >> k;
-
-    vi b(n), c(m);
-    for (auto &num : b) cin >> num;
-    for (auto &num : c) cin >> num;
-    
-    int cnt = 0;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
-            cnt += b[i] + c[j] <= k;
-    cout << cnt << nl;
+bool isPrime(int n)
+{
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (n % i == 0)
+            return false;
+    }
+    return n >= 2;
 }
 
-int main() {
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll x = sqrt(n);
+    if (isPrime(x) and x * x == n) yes;
+    else no;
+}
+
+int main()
+{
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
